@@ -1,6 +1,3 @@
-<% if @promotions.empty? %>
-    <h1>Nenhuma promoção cadastrada</h1>
-<% else %>
 <dl>
 <% @promotions.each do |promotion| %>
     <dt>Nome</dt>
@@ -9,8 +6,13 @@
     <dd><%= promotion.description %></dd>
     <dt>Porcentagem de desconto</dt>
     <dd><%= number_to_percentage promotion.discount_rate, precision: 2, separator: ',' %></dd>
+    <dt>Código</dt>
+    <dd><%= promotion.code %></dd>
+    <dt>Quantidade de Cupons restantes</dt>
+    <dd><%= promotion.coupon_quantity %></dd>
+    <dt>Data de Expiração</dt>
+    <dd><%= promotion.expiration_date.strftime("%d/%m/%Y") %></dd>
     <hr>
 <% end %>
 </dl>
-<% end %>
-<%= link_to 'Voltar', root_path %>
+<%= link_to 'Voltar', promotions_path %>
