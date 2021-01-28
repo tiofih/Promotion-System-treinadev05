@@ -1,0 +1,30 @@
+<h1>Nova Promoção</h1>
+
+<%= form_with(model: Promotion.new) do |f| %>
+    <div>
+        <%= f.label :name, 'Nome' %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :description, 'Descrição' %>
+        <%= f.text_field :description %>
+    </div>
+    <div>
+        <%= f.label :code, 'Código' %>
+        <%= f.text_field :code %>
+    </div>
+    <div>
+        <%= f.label :discount_rate, 'Desconto' %>
+        <%= f.text_field :discount_rate %>
+    </div>
+    <div>
+        <%= f.label :coupon_quantity, 'Quantidade de cupons' %>
+        <%= f.text_field :coupon_quantity %>
+    </div>
+    <div>
+        <%= f.label :expiration_date, 'Data de término' %>
+        <%= f.text_field :expiration_date %>
+    </div>
+
+    <%= f.submit 'Criar promoção' %>
+<% end %>
