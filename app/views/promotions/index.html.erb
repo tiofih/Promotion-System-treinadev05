@@ -1,5 +1,7 @@
 <% if @promotions.empty? %>
     <div class="warning"><h1>Nenhuma promoção cadastrada</h1></div>
+<% elsif local_assigns[:deleted] %>
+    <div class="warning"><h1>Promoção deletada com sucesso</h1></div>
 <% else %>
     <% @promotions.each do |promotion| %>
         <div>

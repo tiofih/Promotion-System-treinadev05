@@ -16,7 +16,6 @@ feature 'Admin registers a valid promotion' do
 
     expect(Promotion.count).to eq 0
     expect(page).to have_content('Não foi possível criar a promoção')
-    #expect(page).to have_content('não pode ficar em branco', count: 5)
   end
 
   scenario 'and code must be unique' do
