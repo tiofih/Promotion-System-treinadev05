@@ -1,18 +1,26 @@
+<% if flash[:notice] %>
+  <div>
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
 <dl>
-    <dt>Nome</dt>
-    <dd><%= @promotion.name %></dd>
-    <dt>Descrição</dt>
-    <dd><%= @promotion.description %></dd>
-    <dt>Porcentagem de desconto</dt>
-    <dd><%= number_to_percentage @promotion.discount_rate, precision: 2, separator: ',' %></dd>
-    <dt>Código da Promoção</dt>
-    <dd><%= @promotion.code %></dd>
-    <dt>Data de Expiração</dt>
-    <dd><%= I18n.localize @promotion.expiration_date %></dd>
-    <dt>Quantidade de Cupons</dt>
-    <dd><%= @promotion.coupon_quantity %></dd>
+  <dt>Nome</dt>
+  <dd><%= @promotion.name %></dd>
+  <dt>Descrição</dt>
+  <dd><%= @promotion.description %></dd>
+  <dt>Porcentagem de desconto</dt>
+  <dd><%= number_to_percentage @promotion.discount_rate, precision: 2, separator: ',' %></dd>
+  <dt>Código da Promoção</dt>
+  <dd><%= @promotion.code %></dd>
+  <dt>Data de Expiração</dt>
+  <dd><%= I18n.localize @promotion.expiration_date %></dd>
+  <dt>Quantidade de Cupons</dt>
+  <dd><%= @promotion.coupon_quantity %></dd>
 </dl>
-
 <%= link_to 'Editar promoção', edit_promotion_path %>
 <%= link_to 'Deletar promoção', promotion_path(@promotion), method: :delete %>
+<%= link_to 'Gerar cupons', generate_coupons_promotion_path(@promotion), method: :post %>
 <%= link_to 'Voltar', promotions_path %>
+<% @promotion.coupons.each do |coupon|%>
+  <%= coupon.code %>
+<% end %>
