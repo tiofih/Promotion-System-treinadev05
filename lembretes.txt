@@ -1,0 +1,13 @@
+03/02/2021
+- Criar o hash de coupons e insert_all
+- https://www.betterspecs.org/
+- https://guides.rubyonrails.org/i18n.html#lazy-lookup
+- Não permitir a edição de quantidade se possuem cupons emitidos
+- https://guides.rubyonrails.org/active_record_validations.html#custom-methods
+- Criar mais cupons caso hajam menos
+- Se todos os cupons foram emitidos, sumir com o botão
+- # TODO: e depos rails notes
+- Testar se o programa gera + 9999 cupons e falhar
+- Testar se criar uma quantidade de cupons <0 da erro
+- https://api.rubyonrails.org/classes/ActiveRecord/Enum.html
+- https://api.rubyonrails.org/classes/ActiveRecord/Enum.html

@@ -26,7 +26,7 @@ class PromotionsController < ApplicationController
 
   def update
     @promotion = Promotion.find(params[:id])
-    if @promotion.update(promotion_params)
+    if @promotion.update!(promotion_params)
       redirect_to promotion_path(promotion_params)
     else
       render 'edit'
@@ -42,11 +42,8 @@ class PromotionsController < ApplicationController
 
   def generate_coupons
     @promotion = Promotion.find(params[:id])
-    (1..@promotion.coupon_quantity).each do |number|
-      Coupon.create!(code: "#{@promotion.code}-#{'%04d' % number}", promotion_id: @promotion.id)
-    end
-    flash[:notice] = 'Cupons gerados com sucesso'
-    redirect_to @promotion
+    @promotion.generate_coupons!
+    redirect_to @promotion, notice: t('.success')
   end
 
   private

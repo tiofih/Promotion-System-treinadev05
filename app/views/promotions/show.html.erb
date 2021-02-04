@@ -23,4 +23,5 @@
 <%= link_to 'Voltar', promotions_path %>
 <% @promotion.coupons.each do |coupon|%>
   <%= coupon.code %>
+  <%= link_to 'Inativar', inactivate_coupon_path(coupon), method: :post %>
 <% end %>
