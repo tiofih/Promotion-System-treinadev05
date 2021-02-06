@@ -2,7 +2,7 @@
 class CouponsController < ApplicationController
     def inactivate
         @coupon = Coupon.find(params[:id])
-        @coupon.inactivate!
+        @coupon.inactive!
         redirect_to @coupon.promotion
     end
 end

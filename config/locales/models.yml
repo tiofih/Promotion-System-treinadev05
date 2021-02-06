@@ -4,6 +4,9 @@ pt-BR:
       promotion: 
         one: Promoção
         other: Promoções
+      user:
+        one: Usuário
+        other: Usuários
     attributes:
       promotion:
         name: "Nome"
@@ -12,3 +15,5 @@ pt-BR:
         expiration_date: "Data de término"
         coupon_quantity: "Quantidade de cupons"
         description: "Descrição"
+      user:
+        password: "Senha"

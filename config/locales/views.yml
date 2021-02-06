@@ -1,0 +1,8 @@
+pt-BR:
+  active: 'Ativo'
+  inactive: 'Inativo'
+  promotion_link: "Promoções"
+  promotions:
+    show:
+      active: 'Ativo'
+      inactive: 'Inativo'

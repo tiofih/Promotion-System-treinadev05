@@ -10,4 +10,9 @@
 - Testar se o programa gera + 9999 cupons e falhar
 - Testar se criar uma quantidade de cupons <0 da erro
 - https://api.rubyonrails.org/classes/ActiveRecord/Enum.html
-- https://api.rubyonrails.org/classes/ActiveRecord/Enum.html
+
+05/02/2021
+- https://thoughtbot.com/upcase/test-driven-rails
+- https://campuscode.com.br/conteudos/rodando-os-testes-que-falharam-com-rspec
+- Proteger a rota de inativação do cupom (teste de request)
+- fazer o sign up

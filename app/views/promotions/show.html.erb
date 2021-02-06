@@ -21,7 +21,11 @@
 <%= link_to 'Deletar promoção', promotion_path(@promotion), method: :delete %>
 <%= link_to 'Gerar cupons', generate_coupons_promotion_path(@promotion), method: :post %>
 <%= link_to 'Voltar', promotions_path %>
-<% @promotion.coupons.each do |coupon|%>
-  <%= coupon.code %>
-  <%= link_to 'Inativar', inactivate_coupon_path(coupon), method: :post %>
+<% @promotion.coupons.each do |coupon|%>.code + ' (Inativo)'%>
+  <div id="coupon-<%= coupon.id %>">
+    <%= coupon.code %> (<%= t(".#{coupon.status}") %>)
+    <% if coupon.active? %>
+      <%= link_to 'Inativar', inactivate_coupon_path(coupon), method: :post %>
+    <% end %>
+  </div>
 <% end %>
