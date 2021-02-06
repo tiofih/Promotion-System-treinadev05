@@ -16,3 +16,4 @@
 - https://campuscode.com.br/conteudos/rodando-os-testes-que-falharam-com-rspec
 - Proteger a rota de inativação do cupom (teste de request)
 - fazer o sign up
+- fazer a parte final do video de hoje

@@ -9,6 +9,9 @@ feature 'Admin view promotions' do
                       description: 'Promoção de Cyber Monday',
                       code: 'CYBER15', discount_rate: 15,
                       expiration_date: '22/12/2033')
+    # TODO: Fazer isso em todos
+    user = User.create!(email: 'joao@email.com', password: '123456')
+    login_as user, scope: user
 
     visit root_path
     click_on 'Promoções'
