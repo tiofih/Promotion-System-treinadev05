@@ -17,6 +17,7 @@
   <dt>Quantidade de Cupons</dt>
   <dd><%= @promotion.coupon_quantity %></dd>
 </dl>
+<span>Cadastrada por: <%= @promotion.user.email %></span>
 <%= link_to 'Editar promoção', edit_promotion_path %>
 <%= link_to 'Deletar promoção', promotion_path(@promotion), method: :delete %>
 <%= link_to 'Gerar cupons', generate_coupons_promotion_path(@promotion), method: :post %>

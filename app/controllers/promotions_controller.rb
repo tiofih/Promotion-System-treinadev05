@@ -14,7 +14,12 @@ class PromotionsController < ApplicationController
   end
 
   def create
+    promotion_params = params.require(:promotion)
+                            .permit(:name, :code, :discount_rate, :description,
+                                    :coupon_quantity, :expiration_date)
     @promotion = Promotion.new(promotion_params)
+    @promotion.user = current_user
+
     if @promotion.save
       redirect_to promotion_path(id: @promotion.id)
     else
