@@ -49,15 +49,18 @@ class PromotionsController < ApplicationController
 
   def generate_coupons
     @promotion = Promotion.find(params[:id])
-    @promotion.generate_coupons!
-    redirect_to @promotion, notice: t('.success')
+    if @promotion.coupon_quantity > 9999 || @promotion.coupon_quantity < 1
+      redirect_to @promotion, notice: t('.fail_coupon_quantity')
+    else
+      @promotion.generate_coupons!
+      redirect_to @promotion, notice: t('.success')
+    end
   end
 
   private
-
-  def promotion_params
-    params.require(:promotion).permit(:name, :description,
-                                      :code, :discount_rate,
-                                      :coupon_quantity, :expiration_date)
-  end
+    def promotion_params
+      params.require(:promotion).permit(:name, :description,
+                                        :code, :discount_rate,
+                                        :coupon_quantity, :expiration_date)
+    end
 end

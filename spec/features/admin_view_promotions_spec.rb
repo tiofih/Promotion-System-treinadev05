@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'Admin view promotions' do
   scenario 'successfully' do
-    # TODO: Fazer isso em todos
     user = User.create!(email: 'joao@email.com', password: '123456')
     login_as(user, :scope => :user)
     Promotion.create!(name: 'Natal', description: 'Promoção de Natal',

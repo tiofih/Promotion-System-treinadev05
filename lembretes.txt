@@ -1,19 +1,19 @@
 03/02/2021
-- Criar o hash de coupons e insert_all
+- Criar o hash de coupons e insert_all => FEITO!
 - https://www.betterspecs.org/
 - https://guides.rubyonrails.org/i18n.html#lazy-lookup
 - Não permitir a edição de quantidade se possuem cupons emitidos
 - https://guides.rubyonrails.org/active_record_validations.html#custom-methods
 - Criar mais cupons caso hajam menos
-- Se todos os cupons foram emitidos, sumir com o botão
+- Se todos os cupons foram emitidos, sumir com o botão => FEITO!
 - # TODO: e depos rails notes
-- Testar se o programa gera + 9999 cupons e falhar
-- Testar se criar uma quantidade de cupons <0 da erro
+- Testar se o programa gera + 9999 cupons e falhar => FEITO!
+- Testar se criar uma quantidade de cupons <0 da erro => FEITO!
 - https://api.rubyonrails.org/classes/ActiveRecord/Enum.html
 
 05/02/2021
 - https://thoughtbot.com/upcase/test-driven-rails
 - https://campuscode.com.br/conteudos/rodando-os-testes-que-falharam-com-rspec
 - Proteger a rota de inativação do cupom (teste de request)
-- fazer o sign up
+- fazer o sign up => FEITO!
 - fazer a parte final do video de hoje

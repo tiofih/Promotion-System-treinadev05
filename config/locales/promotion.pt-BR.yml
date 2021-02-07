@@ -2,3 +2,4 @@ pt-BR:
   promotions:
     generate_coupons:
       success: 'Cupons gerados com sucesso'
+      fail_coupon_quantity: 'Quantidade de cupons inválida'
