@@ -16,4 +16,8 @@
 - https://campuscode.com.br/conteudos/rodando-os-testes-que-falharam-com-rspec
 - Proteger a rota de inativação do cupom (teste de request)
 - fazer o sign up => FEITO!
-- fazer a parte final do video de hoje
+- fazer a parte final do video de hoje => FEITO!
+
+08/02/2021
+- Avdi Grimm - Autor de livro sobre erros no ruby - https://avdi.codes
+- Sandi Metz

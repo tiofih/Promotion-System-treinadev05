@@ -1,5 +1,6 @@
 class Promotion < ApplicationRecord
   has_many :coupons
+  has_one :promotion_approval
   belongs_to :user
   validates :name, :discount_rate, :code, :coupon_quantity, :expiration_date, presence: true
   # validates :discount_rate, :coupon_quantity, numericality: { greater_than: 0 }
@@ -16,5 +17,21 @@ class Promotion < ApplicationRecord
       end
       coupons.insert_all!(coupons_array)
     end
+  end
+
+  def approved?
+    promotion_approval
+  end
+
+  def approver
+    promotion_approval&.user
+  end
+
+  def approved_at
+    promotion_approval.created_at
+  end
+
+  def approve!(approval_user)
+    PromotionApproval.create(promotion: self, user: approval_user)
   end
 end

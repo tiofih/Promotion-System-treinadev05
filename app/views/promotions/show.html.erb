@@ -16,12 +16,19 @@
   <dd><%= I18n.localize @promotion.expiration_date %></dd>
   <dt>Quantidade de Cupons</dt>
   <dd><%= @promotion.coupon_quantity %></dd>
+  <% if @promotion.approved? %>
+    <dt>Status:</dt>
+    <dd>Promoção aprovada</dd>
+  <% end %>
 </dl>
 <span>Cadastrada por: <%= @promotion.user.email %></span>
 <%= link_to 'Editar promoção', edit_promotion_path %>
 <%= link_to 'Deletar promoção', promotion_path(@promotion), method: :delete %>
 <% if @promotion.coupons.any? == false %>
   <%= link_to 'Gerar cupons', generate_coupons_promotion_path(@promotion), method: :post %>
+<% end %>
+<% if current_user != @promotion.user%>
+  <%= link_to 'Aprovar Promoção', approve_promotion_path, method: :post %>
 <% end %>
 <%= link_to 'Voltar', promotions_path %>
 <% @promotion.coupons.each do |coupon|%>.code + ' (Inativo)'%>
