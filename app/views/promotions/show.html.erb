@@ -21,6 +21,10 @@
     <dd>Promoção aprovada</dd>
   <% end %>
 </dl>
+<h2>Categoria de Produtos</h2>
+<% @promotion.product_categories.each do |pc|%>
+  <%= pc.code %> - <%= pc.name %>
+<% end %>
 <span>Cadastrada por: <%= @promotion.user.email %></span>
 <%= link_to 'Editar promoção', edit_promotion_path %>
 <%= link_to 'Deletar promoção', promotion_path(@promotion), method: :delete %>

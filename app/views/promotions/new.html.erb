@@ -1,11 +1,11 @@
 <h1>Nova Promoção</h1>
 <% if @promotion.errors.any? %>
-    <div class="alert">
-        <p>Não foi possível criar a promoção</p>
-        <p>Confira os erros abaixo:</p>
-        <% @promotion.errors.full_messages.each do |m| %>
-            <%= m %>
-        <% end %>
-    </div>
+  <div class="alert">
+    <p>Não foi possível criar a promoção</p>
+    <p>Confira os erros abaixo:</p>
+    <% @promotion.errors.full_messages.each do |m| %>
+      <%= m %>
+    <% end %>
+  </div>
 <% end %>
 <%= render 'form', new: true, promotion: @promotion %>

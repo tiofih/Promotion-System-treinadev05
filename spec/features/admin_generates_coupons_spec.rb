@@ -36,6 +36,22 @@ feature 'Admin generates coupons' do
     expect(page).not_to have_content('Gerar cupons')
   end
 
+  #TODO: Implementar 
+  xscenario 'button deactivate if promotion is not approved' do
+    user = User.create!(email: 'joao@email.com', password: '123456')
+    login_as(user, :scope => :user)
+    promotion = Promotion.create!(name: 'Natal', description: 'Promoção de Natal',
+                                  code: 'NATAL10', discount_rate: 10, coupon_quantity: 1,
+                                  expiration_date: '22/12/2033', user: user)
+
+    visit root_path
+    click_on 'Promoções'
+    click_on 'Natal'
+    click_on 'Gerar cupons'
+
+    expect(page).not_to have_content('Gerar cupons')
+  end
+
   scenario 'not more than 9999' do
     user = User.create!(email: 'joao@email.com', password: '123456')
     login_as(user, :scope => :user)

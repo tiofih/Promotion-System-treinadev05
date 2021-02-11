@@ -9,6 +9,7 @@ class PromotionsController < ApplicationController
     @promotion = Promotion.find(params[:id])
   end
 
+  #TODO: Fazer variável pra consulta
   def new
     @promotion = Promotion.new
   end
@@ -16,7 +17,8 @@ class PromotionsController < ApplicationController
   def create
     promotion_params = params.require(:promotion)
                             .permit(:name, :code, :discount_rate, :description,
-                                    :coupon_quantity, :expiration_date)
+                                    :coupon_quantity, :expiration_date,
+                                    product_category_ids: [])
     @promotion = Promotion.new(promotion_params)
     @promotion.user = current_user
 

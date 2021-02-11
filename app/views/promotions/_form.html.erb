@@ -1,34 +1,37 @@
 <%= form_with model: promotion do |f| %>
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
-    <div>
-        <%= f.label :description %>
-        <%= f.text_field :description %>
-    </div>
-    <div>
-        <%= f.label :code %>
-        <%= f.text_field :code %>
-    </div>
-    <div>
-        <%= f.label :discount_rate %>
-        <%= f.text_field :discount_rate %>
-    </div>
-    <div>
-        <%= f.label :coupon_quantity %>
-        <%= f.text_field :coupon_quantity %>
-    </div>
-    <div>
-        <%= f.label :expiration_date %>
-        <%= f.text_field :expiration_date %>
-    </div>
-
-    <div>
-        <% if local_assigns[:new] %>
-            <%= f.submit 'Criar promoção' %>
-        <% else %>
-            <%= f.submit 'Finalizar edição' %>
-        <% end %>
-    </div>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+  <div>
+    <%= f.label :discount_rate %>
+    <%= f.text_field :discount_rate %>
+  </div>
+  <div>
+    <%= f.label :coupon_quantity %>
+    <%= f.text_field :coupon_quantity %>
+  </div>
+  <div>
+    <%= f.label :expiration_date %>
+    <%= f.text_field :expiration_date %>
+  </div>
+  <% #TODO: Fazer variável pra consulta %>
+  <div>
+    <%= f.collection_check_boxes :product_category_ids, ProductCategory.all, :id, :name %>
+  </div>
+  <div>
+    <% if local_assigns[:new] %>
+      <%= f.submit 'Criar promoção' %>
+    <% else %>
+      <%= f.submit 'Finalizar edição' %>
+    <% end %>
+  </div>
 <% end %>
