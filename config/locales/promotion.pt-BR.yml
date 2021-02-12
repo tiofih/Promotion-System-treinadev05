@@ -3,3 +3,5 @@ pt-BR:
     generate_coupons:
       success: 'Cupons gerados com sucesso'
       fail_coupon_quantity: 'Quantidade de cupons inválida'
+    search:
+      search_fail: 'Nenhuma promoção encontrada'

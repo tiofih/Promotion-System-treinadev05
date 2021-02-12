@@ -1,0 +1,27 @@
+<h1>Resultados da busca</h1>
+<% if @promotions.any? %>
+  <ul>
+    <% @promotions.each do |p| %>
+      <dl>
+        <dt>Nome</dt>
+        <dd><%= p.name %></dd>
+        <dt>Descrição</dt>
+        <dd><%= p.description %></dd>
+        <dt>Porcentagem de desconto</dt>
+        <dd><%= number_to_percentage p.discount_rate, precision: 2, separator: ',' %></dd>
+        <dt>Código da Promoção</dt>
+        <dd><%= p.code %></dd>
+        <dt>Data de Expiração</dt>
+        <dd><%= I18n.localize p.expiration_date %></dd>
+        <dt>Quantidade de Cupons</dt>
+        <dd><%= p.coupon_quantity %></dd>
+        <% if p.approved? %>
+          <dt>Status:</dt>
+          <dd>Promoção aprovada</dd>
+        <% end %>
+      </dl>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nenhuma promoção encontrada</p>
+<% end %>

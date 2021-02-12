@@ -1,22 +1,30 @@
 <% if @promotions.empty? %>
-    <div class="warning"><h1>Nenhuma promoção cadastrada</h1></div>
+  <div class="warning">
+    <h1>Nenhuma promoção cadastrada</h1>
+  </div>
 <% elsif local_assigns[:deleted] %>
-    <div class="warning"><h1>Promoção deletada com sucesso</h1></div>
+  <div class="warning">
+    <h1>Promoção deletada com sucesso</h1>
+  </div>
 <% else %>
-    <% @promotions.each do |promotion| %>
-        <div>
-            <dl>
-                <dt>Nome</dt>
-                <dd><%= link_to promotion.name, promotion %></dd>
-                <dt>Descrição</dt>
-                <dd><%= promotion.description %></dd>
-                <dt>Porcentagem de desconto</dt>
-                <dd><%= number_to_percentage promotion.discount_rate, precision: 2, separator: ',' %></dd>
-                <hr>
-            </dl>
-        </div>
-    <% end %>
+  <% @promotions.each do |promotion| %>
+    <div>
+      <dl>
+        <dt>Nome</dt>
+        <dd><%= link_to promotion.name, promotion %></dd>
+        <dt>Descrição</dt>
+        <dd><%= promotion.description %></dd>
+        <dt>Porcentagem de desconto</dt>
+        <dd><%= number_to_percentage promotion.discount_rate, precision: 2, separator: ',' %></dd>
+        <hr>
+      </dl>
+    </div>
+  <% end %>
 <% end %>
 <%= link_to 'Registrar uma promoção', new_promotion_path %>
 <%= link_to 'Voltar', root_path %>
-
+<%= form_with url: search_path, method: :get do %>
+  <%= label_tag :q, 'Busca' %>
+  <%= text_field_tag :q %>
+  <%= submit_tag 'Pesquisar' %>
+<% end %>
