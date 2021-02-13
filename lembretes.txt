@@ -21,3 +21,6 @@
 08/02/2021
 - Avdi Grimm - Autor de livro sobre erros no ruby - https://avdi.codes
 - Sandi Metz
+
+12/02/2021
+- https://campuscode.com.br/conteudos/encontrando-registros-com-associacao-em-rails
